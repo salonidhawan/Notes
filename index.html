@@ -19,7 +19,7 @@
   </style>
 </head>
 <body bgcolor="#D4E7ED">
-  <h1 style="font-family:montserrat;color:#008081">Money Money Money</h1>
+  <h1 style="font-family:montserrat;color:#008081;text-align:center"><u>Money Money Money</u></h1>
 
 
 
@@ -67,59 +67,6 @@ layer:
 
 
 
-```vis
-width: 800
-height: 400
-data:
-  url: data/notes.csv
-layer:
-- mark: circle
-  encoding:
-    x:
-      field: year
-      type: temporal
-      scale:
-        type: log
-
-
-    y:
-      field: money
-      type: quantitative
-
-    size:
-      field: value
-
-    color:
-      field: denom
-
-- mark: tick
-  encoding:
-    x:
-     field: denom
-    y:
-     field: year
-     type: temporal
-
-
-
-```
-
-```vis
-width: 600
-data:
-  url: data/notes.csv
-mark: line
-encoding:
-  x:
-    field: year
-    type: nominal
-  y:
-    field: value
-    type: quantitative
-  color:
-    field: denom
-
-```
 
 
 </div>
