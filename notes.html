@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Saloni</title>
+  <title>Visualising Money</title>
   <meta name="description" content="Create Simple Visualisation Charts with Markdown">
 
   <script src="lib/vega.min.js"></script>
@@ -16,113 +16,55 @@
   <style>
     #visdown-output {max-width: 800px; margin: 0 auto;}
     #visdown-input {display: none;}
+     p {font-family: roboto;size:18;color:#367588}
   </style>
 </head>
-<body>
+<body background="#ffffe6">
+
+<img src="title-02.png">
+
 
 <div id="visdown-input">
 
-
-
-```vis
-width: 800
-height: 400
-data:
-  url: data/notes.csv
-
-layer:
-- mark: line
-  size: 4
-  encoding:
-    x:
-      field: year
-      type: quantitative
-      bin:
-        maxbins: 38
-
-    y:
-      field: number
-      type: quantitative
-
-
-    color:
-      field: denom
-      type: nominal
-
-    opacity:
-      value: 0.8
-    size:
-      value: 5
-
-
-    size:
-      value: 70
-    color:
-      value: 000000
-
-
-```
-
-
+<p style="font-family:roboto;size:18;color:#367588;"> The share and value of currency of the denominations 100, 500 and 1000 </p>
 
 ```vis
 width: 800
 height: 400
+
 data:
-  url: data/notes.csv
-layer:
-- mark: circle
-  encoding:
-    x:
-      field: year
-      type: temporal
-      scale:
-        type: log
-
-
-    y:
-      field: money
-      type: quantitative
-
-    size:
-      field: value
-
-    color:
-      field: denom
-
-- mark: tick
-  encoding:
-    x:
-     field: denom
-    y:
-     field: year
-     type: temporal
-
-
-
-```
-
-```vis
-width: 600
-data:
-  url: data/notes.csv
-mark: line
+url: data/notes.csv
+transform:
+- filter: (datum.value == 1)
 encoding:
-  x:
-    field: year
-    type: nominal
-  y:
-    field: value
-    type: quantitative
-  color:
-    field: denom
+ x:
+  field: year
+  type: nominal
+ y:
+  field: number
+  type: quantitative
+
+ color:
+  field: value
 
 ```
+<br>
+<br>
+<br>
+<br>
+<marquee> <img src='ruppeee-01.png'/> </marquee>
+<hr>
 
 
 </div>
 <div id="visdown-output"></div>
 <script src="visdown.js"></script>
+<hr>
+<footer>
+  <p style="font-family:roboto;size:18;color:#88D8C0;text-align:center"> By: Saloni Dhawan</p>
+  <p style="font-family:roboto;size:18;color:#88D8C0;text-align:center">Contact: Email <a href="mailto:saloni_dh@nid.edu">
+  saloni_dh@nid.edu</a>.</p>
+</footer>
 
 </body>
 </html>
