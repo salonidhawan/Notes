@@ -20,170 +20,36 @@
   </style>
 </head>
 <body background="#ffffe6">
-  <h1 style="font-family:roboto;color:#008081;text-align:center"><em>Visualising Money</em></h1>
 
+<img src="title-02.png">
+<img src="note-04.png">
+<img src="note-03.png">
+<img src="note-01.png">
+<img src="note-05.png">
 
 
 <div id="visdown-input">
 
-<p style="font-family:roboto;size:18;color:#367588;"> The share and value of currency of the denominations 100, 500 and 1000 </p>
+<p style="font-family:roboto;size:18;color:#367588;">
 
-  ```vis
-  width: 650
-  height: 400
-  data:
-    url: data/notes.csv
-  transform:
-  - filter: (datum.denom > 90)
-
-
-  layer:
-  - mark: area
-    size: 4
-    encoding:
-      x:
-        field: year
-        type: temporal
-
-      y:
-        field: number
-        type: quantitative
-
-
-
-
-      color:
-        field: denom
-        type: nominal
-
-      opacity:
-        value: 0.4
-      size:
-        value: 5
-
-
-      size:
-        value: 70
-      color:
-        value: 000000
-
-
-  - mark: point
-
-    encoding:
-      x:
-       field: year
-       type: temporal
-      y:
-       field: number
-       type: quantitative
-      size:
-       field: money
-      color:
-       field: denom
-       type: nominal
-
-
-  ```
-  <p style="font-family:roboto;size:18;color:#367588"> The share and value of currency of the denominations 1, 2, 5, 10, 20 and 50 </p>
-
-  ```vis
-width: 650
-height: 400
-data:
-  url: data/notes.csv
-transform:
-- filter: (datum.denom < 90)
-
-
-layer:
-- mark: area
-  size: 4
-  encoding:
-    x:
-      field: year
-      type: temporal
-
-    y:
-      field: number
-      type: quantitative
-
-
-
-
-    color:
-      field: denom
-      type: nominal
-
-    opacity:
-      value: 0.4
-    size:
-      value: 5
-
-
-    size:
-      value: 70
-    color:
-      value: 000000
-
-
-- mark: point
-
-  encoding:
-    x:
-     field: year
-     type: temporal
-    y:
-     field: number
-     type: quantitative
-    size:
-     field: money
-    color:
-     field: denom
-     type: nominal
-
-
-```
-<p> The share of notes of each denomination from 1977 to 2015 </p>
 ```vis
-width: 650
+width: 800
 height: 400
+
 data:
-  url: data/notes.csv
-
-
-
-mark: area
-size: 4
-
+url: data/notes.csv
+transform:
+- filter: (datum.value == 1)
 encoding:
-  x:
-    field: year
-    type: temporal
+ x:
+  field: year
+  type: nominal
+ y:
+  field: number
+  type: quantitative
 
-
-  y:
-    field: number
-    type: quantitative
-    stack: normalize
-
-
-
-  color:
-    field: denom
-    type: nominal
-
-  opacity:
-    value: 0.6
-  size:
-    value: 5
-
-
-  size:
-    value: 70
-  color:
-    value: 000000
-
+ color:
+  field: value
 
 ```
 <br>
@@ -191,16 +57,17 @@ encoding:
 <br>
 <br>
 <marquee> <img src='ruppeee-01.png'/> </marquee>
-<hr>
+
 
 
 </div>
 <div id="visdown-output"></div>
 <script src="visdown.js"></script>
 <hr>
+<br>
 <footer>
-  <p style="font-family:roboto;size:18;color:#88D8C0;text-align:center"> By: Saloni Dhawan</p>
-  <p style="font-family:roboto;size:18;color:#88D8C0;text-align:center">Contact: Email <a href="mailto:saloni_dh@nid.edu">
+  <p style="font-family:roboto;size:14;color:#88D8C0;text-align:center"> By: Saloni Dhawan</p>
+  <p style="font-family:roboto;size:14;color:#88D8C0;text-align:center">Contact: Email <a href="mailto:saloni_dh@nid.edu">
   saloni_dh@nid.edu</a>.</p>
 </footer>
 
